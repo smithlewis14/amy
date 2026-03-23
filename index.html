@@ -199,19 +199,18 @@ const reasons = [
   "50. Simply, the way you are - every part of you is my favorite thing."
 ];
 
-/* ===== FLOATING EMOJIS ===== */
-if (!('ontouchstart' in window)) { // only desktop
-  const symbols = ["🖤","🐈‍⬛","🦇"];
-  setInterval(()=>{
-    const el = document.createElement("div");
-    el.className="float";
-    el.innerText = symbols[Math.floor(Math.random()*symbols.length)];
-    el.style.left = Math.random()*90 + "vw";
-    el.style.fontSize = (20 + Math.random()*20) + "px"; // 20–40px
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(), 8000);
-  }, 600);
-}
+const symbols = ["🖤","🐈‍⬛","🦇"];
+setInterval(()=>{
+  const el = document.createElement("div");
+  el.className="float";
+  el.innerText = symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left = Math.random()*90 + "vw";
+  el.style.fontSize = (20 + Math.random()*20) + "px"; 
+  document.body.appendChild(el);
+  
+  // Remove after animation
+  setTimeout(()=>el.remove(), 8000);
+}, 800); // slightly slower interval for mobile performance
 
 /* ===== CURSOR TRAIL ===== */
 if (!('ontouchstart' in window)) {
